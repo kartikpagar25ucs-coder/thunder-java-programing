@@ -1,20 +1,46 @@
 
+import java.util.Scanner;
+
 public class sorting_Cheak{
     public static void main(String[]args){
-        int sorted[]={11,12,13,16,15};
-        // int unsorted[]={12,11,14,13,15};
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter size of array:");
+        int size=sc.nextInt();
+        int array[]=new int [size];
+
+        for(int i=0; i<size ;i++){
+            System.out.print("enter values of index "+i+" :");
+            array[i]=sc.nextInt();
+        }
 
         boolean isAsending = true;
-        for(int i=0 ; i<sorted.length-1;i++){
-            if(sorted[i]>sorted[i+1]){
+        for(int i=0 ; i<array.length-1;i++){
+            if(array[i]>array[i+1]){
                 isAsending=false;
             }
         }
+        
         if(isAsending){
-            System.out.print("order is an asending order");
+            System.out.println("order is an asending order");
         }
         else{
-            System.out.print("order is not in asending order");
+            System.out.println("order is not in asending order");
         }
+
+        boolean isDescending =true;
+        for(int i=0 ; i<array.length-1 ; i++){
+            if(array[i]<array[i+1]){
+                isDescending=false;
+            }
+        }
+
+        if(isDescending){
+            System.out.println("order is decending");
+        }
+        else{
+            System.out.println("order is not decending");
+        }
+        sc.close();
         }
     }
